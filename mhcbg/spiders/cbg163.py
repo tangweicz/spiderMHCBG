@@ -1,0 +1,1002 @@
+# -*- coding: utf-8 -*-
+import scrapy, json, re
+
+from .. import codeToZhaohuanshou
+
+from mhcbg.items import mhCbgAccountItem
+
+from scrapy.mail import MailSender
+
+import threading, requests, random, queue, time
+
+from mhcbg.models.proxyIpModel import proxyIpModel
+
+class Cbg163Spider(scrapy.Spider):
+
+    name = 'cbg163'
+
+    allowed_domains = ['xyq.cbg.163.com']
+
+    fileHandle = ""
+
+    def start_requests(self):
+
+        print("start crawler", time.time())
+
+        timeNowStr = time.localtime(time.time())
+
+        filename = "log/crawlerLog_" + str(timeNowStr.tm_year) + "_" + str(timeNowStr.tm_mon) + "_" + str(timeNowStr.tm_mday) + ".log"
+
+        self.fileHandle = open(filename, "a")
+
+        nowPage = 1
+
+        while nowPage <= 1:#如果是20页
+
+            reqUrl = "https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&count=30&search_type=overall_search_role&view_loc=overall_search&page="+str(nowPage)
+
+            nowRequest = scrapy.Request(reqUrl, self.parse) #挨个去走scrapy Request的请求
+
+            nowRequest.meta["url"] = reqUrl
+
+            nowRequest.meta["page"] = nowPage
+
+            nowRequest.meta["again"] = 0
+
+            yield nowRequest
+
+            nowPage += 1
+
+    def parse(self, response):
+
+        if response.meta["again"] == 0:
+
+            self.fileHandle.writelines("开始解析第" + str(response.meta["page"]) + "页数据\r\n")  # 开始解析哪一页的数据，记录到我自己的日志里面去
+
+            self.fileHandle.flush()
+
+        else:
+
+            self.fileHandle.writelines("重新开始解析第" + str(response.meta["page"]) + "页数据\r\n")  # 开始解析哪一页的数据，记录到我自己的日志里面去
+
+            self.fileHandle.flush()
+
+        content = response.body_as_unicode()#拿到网页返回的内容
+
+        con = re.findall(r'{.*}', content)#正则匹配到{xxxxxx}中的内容，其余一概不要
+
+        contentDict = json.loads(con[0])#将json字符串转换成dict数据
+
+        allAccount = contentDict.get("equips", False)  # 拿到本页的所有账号数据
+
+        if allAccount and len(allAccount) > 0:#如果有equips节点，并且不为空，那么记录开始解析数据
+
+            for everyAccount in allAccount:#循环每一个账号
+
+                accountItem = mhCbgAccountItem()#每一个账户都有一个item
+
+                accountItem["basicPrice"] = 3500  # 这儿存放我们的估算价格，因为这个价格是109的8修满价格，所以直接3500起步
+
+                accountItem["salePrice"] = everyAccount.get("price_int", 0) / 100  # 拿到账号售价
+
+                accountItem["serverId"] = everyAccount.get("server_id", 0)  # 获取到服务器ID号
+
+                accountItem["accountId"] = everyAccount.get("seller_roleid", 0)  # 获取到角色ID号
+
+                accountItem["linkAddr"] = "https://xyq.cbg.163.com/equip?s=" + str(accountItem["serverId"]) + "&eid=" + everyAccount.get("eid", 0) + "&o&equip_refer=1"
+
+                accountItem["summonPriceAndDetail"] = ""
+
+                accountItem["summonPrice"] = 0
+
+                accountItem["summonNum"] = 0
+
+                accountInfo = everyAccount.get("desc", False)  # 拿到一个账号的神器、坐骑、锦衣、法宝、装备、修炼等信息
+
+                if accountInfo:
+
+                    accountInfoDict = self.changeStrToDict(accountInfo)  # 将拿到的字符串数据结果，转换为dict的数据格式
+
+                    shenqi = accountInfoDict.get("shenqi", False)  # 拿到账户的神器信息
+
+                    if shenqi: # 如果有神器信息，那么需要确定属性，然后算价格
+
+                        accountItem["shenqiPrice"] = self.parseShenqi(shenqi)
+
+                    else:
+
+                        accountItem["shenqiPrice"] = 0
+
+                    xiangruiInfo = accountInfoDict.get("HugeHorse", False)  # 拿到账号的祥瑞信息
+
+                    if xiangruiInfo: # 账号的祥瑞信息是存在的, 那么解析他,算出祥瑞的价格
+
+                        accountItem["xiangruiPrice"] = self.parseXiangrui(xiangruiInfo)
+
+                    else:
+
+                        accountItem["xiangruiPrice"] = 0
+
+                    anotherInfo = everyAccount.get("other_info", False)  # 强壮、神速的属性在other_info中，拿到other_info内容
+
+                    if anotherInfo:
+
+                        anotherInfo = self.changeStrToDict(anotherInfo)
+
+                        accountItem["qiangzhuangshensuPrice"] = self.calculateQiangzhuangAndShensu(anotherInfo)
+
+                    else:
+
+                        accountItem["qiangzhuangshensuPrice"] = 0
+
+                    zhuangbei = accountInfoDict.get("AllEquip", False)#拿到装备信息
+
+                    if zhuangbei:
+
+                        for key, val in zhuangbei.items():#这儿也是类似召唤兽那边，异步处理请求，不过装备使用一个新的item去存放装备的数据
+
+                            print(key)
+
+                            print(val)
+
+                        print(accountItem["linkAddr"])
+
+                    fabao = accountInfoDict.get("fabao", False)#拿到法宝信息
+
+                    jinyi = accountInfoDict.get("ExAvt", False)#拿到锦衣信息
+
+                    if jinyi: #如果有锦衣信息，那么解析锦衣信息，然后计算价格
+
+                        accountItem["jinyiPrice"] = self.parseJinyi(jinyi)
+
+                    else:
+
+                        accountItem["jinyiPrice"] = 0
+
+                    zuoqi = accountInfoDict.get("AllRider", False)#拿到所有的坐骑信息，坐骑信息不加钱，所以不用看，但是告诉我，这儿可以获取到就够了
+
+                    zhaohuanshou = accountInfoDict.get("AllSummon", False)  # 拿到召唤兽信息
+
+                    if zhaohuanshou: # 如果有召唤兽信息，解析召唤兽信息，计算价格
+
+                        allSummonInfoList = self.parseSummon(zhaohuanshou)
+
+                        listLen = len(allSummonInfoList)
+
+                        accountItem["beforeSummonNum"] = listLen
+
+                        for item in allSummonInfoList:
+
+                            url = "https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_2&_=1542589573409&act=recommd_by_role&page=1&order_by=price%20ASC&skill_num="+str(item["jinengNum"])+"&skill=" + item["zhaohuanshouSkillCodes"] + "&level_min=" + str(item["dengji"]) + "&level_max=119&count=1&search_type=overall_search_pet&view_loc=overall_search"
+
+                            summonReq = scrapy.Request(url, self.parseOneSummonPrice, dont_filter=True)
+
+                            summonReq.meta["accountItem"] = accountItem
+
+                            summonReq.meta["summonInfo"] = item
+
+                            yield summonReq
+
+
+        else:#如果没有equips，那么证明没有拿到页面，或者equips就是空的，那么需要重新再来一遍
+
+            requestAgain = scrapy.Request(response.meta["url"], self.parse)
+
+            requestAgain.meta["again"] = 1
+
+            requestAgain.meta["url"] = response.meta["url"]
+
+            requestAgain.meta["page"] = response.meta["page"]
+
+            yield requestAgain
+
+
+
+
+
+    """
+
+        解析账号锦衣信息
+
+    """
+
+    def parseJinyi(self, jinyi):
+
+        price = 0
+
+        qhcyb = 0 # 记录青花瓷月白的数量
+
+        qhcmh = 0 # 记录青花瓷墨黑的数量
+
+        qhc = 0   # 记录青花瓷的数量
+
+        bhqyb = 0 # 记录冰寒俏月白的数量
+
+        bhqmh = 0 # 记录冰寒俏墨黑的数量
+
+        bhq = 0   # 记录冰寒俏的数量
+
+        ymlyb = 0  # 记录云梦龙月白的数量
+
+        ymlmh = 0  # 记录云梦龙墨黑的数量
+
+        yml = 0  # 记录云梦龙的数量
+
+        for key, val in jinyi.items():
+
+            if val["cName"] == "青花瓷·月白":
+
+                qhcyb += 1
+
+            elif val["cName"] == "青花瓷·墨黑":
+
+                qhcmh += 1
+
+            elif val["cName"] == "青花瓷":
+
+                qhc += 1
+
+            elif val["cName"] == "冰寒俏":
+
+                bhq += 1
+
+            elif val["cName"] == "冰寒俏·月白":
+
+                bhqyb += 1
+
+            elif val["cName"] == "冰寒俏·墨黑":
+
+                bhqmh += 1
+
+            elif val["cName"] == "云龙梦":
+
+                yml += 1
+
+            elif val["cName"] == "云龙梦·月白":
+
+                ymlyb += 1
+
+            elif val["cName"] == "云龙梦·墨黑":
+
+                ymlmh += 1
+
+            else:
+
+                pass
+
+
+        if qhc == 3:#青花瓷一套 必须是3件
+
+            price += 2000 # 青花瓷一套加 2000
+
+            if qhcyb == 3: # 如果青花瓷一套全都染了月白，价格加1000
+
+                price += 1000
+
+            else: # 如果没有全部染成月白
+
+                price += 300 * qhcyb # 那么一件就加300
+
+            if qhcmh == 3: # 如果青花瓷一套全都染了墨黑，价格加1000
+
+                price += 1000
+
+            else: # 如果没有全部染成墨黑
+
+                price += 300 * qhcmh # 那么一件就加300
+
+        if bhq == 3:#冰寒俏一套 必须是3件
+
+            price += 500 # 青花瓷一套加 2000
+
+            if bhqyb == 3: # 如果青花瓷一套全都染了月白，价格加1000
+
+                price += 1000
+
+            else: # 如果没有全部染成月白
+
+                price += 300 * bhqyb # 那么一件就加300
+
+            if bhqmh == 3: # 如果青花瓷一套全都染了墨黑，价格加1000
+
+                price += 1000
+
+            else: # 如果没有全部染成墨黑
+
+                price += 300 * bhqmh # 那么一件就加300
+
+        if yml == 3:#云梦龙一套 必须是3件
+
+            price += 500 # 云梦龙一套加 2000
+
+            if ymlyb == 3: # 如果云梦龙一套全都染了月白，价格加1000
+
+                price += 1000
+
+            else: # 如果没有全部染成月白
+
+                price += 300 * ymlyb # 那么一件就加300
+
+            if ymlmh == 3: # 如果云梦龙一套全都染了墨黑，价格加1000
+
+                price += 1000
+
+            else: # 如果没有全部染成墨黑
+
+                price += 300 * ymlmh # 那么一件就加300
+
+        return price
+
+    """
+
+        将网页上拿到的信息，由字符串转化为字典，才能后续解析操作
+
+    """
+    def changeStrToDict(self, accountInfo):
+
+        accountInfo = accountInfo.replace("([", "{")
+
+        accountInfo = accountInfo.replace("])", "}")
+
+        accountInfo = accountInfo.replace("({", "[")
+
+        accountInfo = accountInfo.replace("})", "]")
+
+        accountInfo = re.sub(r"{(\d+):", '{\"\\1\":', accountInfo)
+
+        accountInfo = re.sub(r"},(\d+):{", '},\"\\1\":{', accountInfo)
+
+        accountInfo = re.sub(r",(\d+):", ',\"\\1\":', accountInfo)
+
+        accountInfo = accountInfo.replace(",},", "},")
+
+        accountInfo = accountInfo.replace(",]},", "]},")
+
+        accountInfo = accountInfo.replace(",],", "],")
+
+        accountInfo = accountInfo.replace(",}", "}")
+
+        accountInfo = accountInfo.replace("]},]", "]}]")  # 上面各步骤就是为了 将数据操作成可以json操作的数据格式
+
+        try:
+
+            accountInfo = json.loads(accountInfo)  # 将数据转化成json，对于python里面来说 就是一个字典了！
+
+        except:
+
+
+            self.fileHandle.writelines(accountInfo)
+
+            self.fileHandle.flush()
+
+        return accountInfo
+
+
+    """
+
+        解析神器信息
+
+    """
+    def parseShenqi(self, shenqi):
+
+        estimatePrise = 0
+
+        shenqiAttr = shenqi.get("attributes", False)  # 拿到神器的属性
+
+        if shenqiAttr:  # 如果有神器属性，开始，精确属性，然后开始算价格
+
+            if shenqiAttr:  # 如果有神器属性，且属性字段不为空
+
+                for item in shenqiAttr:  # 循环神器属性，每一个item都是一个字典，因为具体神器的属性，如何算价格我不清楚，这块先不动
+
+                    pass
+
+        return estimatePrise
+
+    """
+
+        解析祥瑞信息
+
+    """
+    def parseXiangrui(self, xiangruiInfo):
+
+        xiangruiNameStr = ""
+
+        estimatePrise = 0
+
+        price, xiangruistr = self.calculateXiangrui(xiangruiInfo)  # 计算祥瑞的价格，返回 price为账号祥瑞累计价格 xiangruistr为祥瑞拼接字符串
+
+        estimatePrise += price
+
+        xiangruiNameStr += xiangruistr
+
+        return estimatePrise
+
+    """
+
+        计算祥瑞的价格
+
+    """
+    def calculateXiangrui(self, xiangruInfo):  # 计算祥瑞价格
+
+        price = 0
+
+        xiangruiStr = ""
+
+        if xiangruInfo:
+
+            for key, value in xiangruInfo.items():
+
+                xiangruiName = value.get("cName", "")
+
+                xiangruiStr += xiangruiName + ","
+
+                if xiangruiName == "天使猪猪":
+
+                    price += 4000
+
+                elif xiangruiName == "甜蜜猪猪":
+
+                    price += 1000
+
+                elif xiangruiName == "九尾冰狐":
+
+                    price += 2000
+
+                elif xiangruiName == "冰晶魅灵":
+
+                    price += 500
+
+                elif xiangruiName == "熊猫团子":
+
+                    price += 500
+
+                elif xiangruiName == "飞天猪猪":
+
+                    price += 200
+
+                elif xiangruiName == "猪猪小侠":
+
+                    price += 200
+
+                elif xiangruiName == "神行小驴":
+
+                    price += 200
+
+                elif xiangruiName == "七彩小驴":
+
+                    price += 200
+
+                elif xiangruiName == "粉红小驴":
+
+                    price += 200
+
+        return (price, xiangruiStr)
+
+
+
+    """
+
+        解析召唤兽信息
+
+    """
+    def parseSummon(self, zhaohuanshou):
+
+        allSummonInfoList = list() # 所有的需要再去请求的召唤兽信息
+
+        if type(zhaohuanshou) == list and zhaohuanshou:  # 确保有召唤兽，如果没有召唤兽，那么不要这条数据
+
+            for item in zhaohuanshou:  # 开始循环召唤兽数据
+
+                everyzhaohuanshouDict = dict()#每一个需要开线程去请求的召唤兽的信息字典 {"zhaohuanshouSkillCodes":....., "zhaohuanshouType":......, "dengji":.......}
+
+                zhaohuanshouName = ""  # 存放召唤兽种类名称，如：鬼将、画魂、幽灵等
+
+                zhaohuanshouJinengList = []  # 存放召唤兽技能的列表，用于计算召唤兽价格的时候，4技能一下都是垃圾
+
+                zhaohuanshouCode = 0
+
+                zhaohuanshouSkillCodes = "" #存放召唤兽技能代号的字符串
+
+                zhaohuanshouType = item.get("iType", False)  # 拿到召唤兽类型信息
+
+                if zhaohuanshouType:  # 如果有类型信息
+
+                    zhaohuanshouCode = zhaohuanshouType
+
+                    zhaohuanshouName = codeToZhaohuanshou.codeToZhaohuanshou.get(str(zhaohuanshouType), "系统内无法识别的召唤兽")  # 从我们的数据中，拿到何种召唤兽
+
+                zhaohuanshouSkills = item.get("all_skills", False)  # 拿到召唤兽技能信息
+
+                if zhaohuanshouSkills:  # 如果有召唤兽技能字段，开始处理
+
+                    if type(zhaohuanshouSkills) == dict and zhaohuanshouSkills:
+
+                        for everySkill in zhaohuanshouSkills.keys():  # 循环每一个技能
+
+                            zhaohuanshouSkillCodes += str(everySkill) + ","
+
+                            zhaohuanshouJinengList.append(str(everySkill))  # 将技能放入到召唤兽技能的列表
+
+                # 开始计算召唤兽价格
+                if zhaohuanshouName.startswith("超级"):  # 如果是超级神兽，不要看技能，需要看种类算钱
+
+                    pass
+
+                else:
+
+                    dengji = item.get("iGrade", 0)  # 拿到召唤兽等级
+
+                    totalDianshu = dengji * 5  # 算得召唤兽能加的总点数
+
+                    tizhi = item.get("iCor_all", 0)  # 拿到召唤兽的体质点数
+
+                    fali = item.get("iMag_all", 0)  # 拿到召唤兽的法力点数
+
+                    liliang = item.get("iStr_all", 0)  # 拿到召唤兽的力量点数
+
+                    naili = item.get("iRes_all", 0)  # 拿到召唤兽的耐力点数
+
+                    minjie = item.get("iSpe_all", 0)  # 拿到召唤兽的敏捷点数
+
+                    attrList = [tizhi, fali, liliang, naili, minjie]  # 属性的集合
+
+                    maxAttr = max(attrList)  # 拿到最高的属性值
+
+                    secondAttr = self.getSecondMax(attrList)  # 拿到第二高的属性值
+
+                    thirdAttr = self.getThirdMax(attrList)  # 拿到第三高的属性值
+
+                    minAttr = min(attrList)  # 拿到最属性中的最小值
+
+                    indexMax = attrList.index(maxAttr)  # 拿到第一高属性值的下标，以确定是什么属性
+
+                    indexSecondMax = attrList.index(secondAttr)  # 拿到第二高属性的下标，以确定是什么属性
+
+                    indexThirdMax = attrList.index(thirdAttr)  # 拿到第三高属性的下标，以确定是什么属性
+
+                    if (maxAttr - minAttr) < 180:
+
+                        # print("垃圾宝宝")
+
+                        pass
+
+                    else:
+
+                        if indexMax == 0:  # 至少是只血宝宝
+
+                            if indexSecondMax == 1:  # 确定是否为血法宝宝
+
+                                if (attrList[indexMax] - attrList[indexSecondMax]) <= (totalDianshu - dengji):  # 如果体质加点数-法力加点数 小于 总加点数-等级数 ，那么可以确定为血法宝宝
+
+                                    # print("血最高，血法宝宝")
+
+                                    everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                                    everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                                    everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                                    everyzhaohuanshouDict["dengji"] = dengji
+
+                                    allSummonInfoList.append(everyzhaohuanshouDict)
+
+                                else:  # 确定为血宝宝
+
+                                    # print("血最高，血宝宝")
+
+                                    pass
+
+                            elif indexSecondMax == 2:  # 确定是否为血功宝宝
+
+                                if (attrList[indexMax] - attrList[indexSecondMax]) <= (totalDianshu - dengji):  # 如果体质加点数-法力加点数 小于 总加点数-等级数 ，那么可以确定为血功宝宝
+
+                                    # print("血最高，血攻宝宝")
+
+                                    everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                                    everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                                    everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                                    everyzhaohuanshouDict["dengji"] = dengji
+
+                                    allSummonInfoList.append(everyzhaohuanshouDict)
+
+                                else:  # 确定为血宝宝
+
+                                    # print("血最高，血宝宝")
+
+                                    pass
+
+                            elif indexSecondMax == 3:  # 确定是否为血耐宝宝
+
+                                if (len(zhaohuanshouJinengList) <= 4):
+
+                                    # print("血最高，技能少于等于4技能，是血宝宝，至于是血耐我不管，反正不值钱")
+
+                                    pass
+
+                                else:
+
+                                    if (attrList[indexMax] - attrList[indexSecondMax]) <= (totalDianshu - dengji):  # 如果体质加点数-耐力加点数 小于 总加点数-等级数 ，那么可以确定为血耐宝宝
+
+                                        if thirdAttr == 1:  # 耐血法宝宝
+
+                                            if (attrList[indexMax] - attrList[indexThirdMax]) < dengji:  # 如果体质加点数-法力加点数 小于 总加点数-等级数 ，那么可以确定为耐法宝宝
+
+                                                # print("血最高，技能大于4技能，血耐法宝宝")
+
+                                                everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                                                everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                                                everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                                                everyzhaohuanshouDict["dengji"] = dengji
+
+                                                allSummonInfoList.append(everyzhaohuanshouDict)
+
+                                            else:
+
+                                                # print("血最高，技能大于4技能，是血耐宝宝")
+
+                                                pass
+
+
+                                        elif thirdAttr == 2:  # 耐血攻宝宝
+
+                                            if (attrList[indexMax] - attrList[indexThirdMax]) < dengji:  # 如果体质加点数-法力加点数 小于 总加点数-等级数 ，那么可以确定为耐法宝宝
+
+                                                # print("血最高，技能大于4技能，血耐攻宝宝")
+
+                                                everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                                                everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                                                everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                                                everyzhaohuanshouDict["dengji"] = dengji
+
+                                                allSummonInfoList.append(everyzhaohuanshouDict)
+
+                                            else:
+
+                                                # print("血最高，技能大于4技能，是血耐宝宝")
+
+                                                pass
+                                        else:
+
+                                            # print("血最高，血耐宝宝")
+
+                                            pass
+                                    else:  # 确定为血宝宝
+
+                                        # print("血最高，血宝宝")
+
+                                        pass
+
+                            else:  # 确定是否为血敏宝宝
+
+                                # print("血最高，血敏宝宝，反正不值钱无所谓")
+
+                                pass
+
+                        elif indexMax == 1:  # 至少是只法宝宝，只要是法宝宝，不需要分 血法宝宝、功法宝宝、法耐宝宝、法敏宝宝
+
+                            # print("法力最高，法宝宝")
+
+                            everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                            everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                            everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                            everyzhaohuanshouDict["dengji"] = dengji
+
+                            allSummonInfoList.append(everyzhaohuanshouDict)
+
+                        elif indexMax == 2:  # 至少是只攻宝宝,只要是攻宝宝，不需要分 血功宝宝、功法宝宝、耐功宝宝、敏功宝宝
+
+                            # print("力量最高，攻宝宝")
+
+                            everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                            everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                            everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                            everyzhaohuanshouDict["dengji"] = dengji
+
+                            allSummonInfoList.append(everyzhaohuanshouDict)
+
+                        elif indexMax == 3:  # 至少是只耐宝宝
+
+                            if indexSecondMax == 0:  # 确定是否为血耐宝宝，但是血耐宝宝，也可能是血功宝宝、血法宝宝、耐法宝宝、耐攻宝宝
+
+                                if (len(zhaohuanshouJinengList) <= 4):
+
+                                    # print("耐最高，技能少于等于4技能，是耐宝宝，至于是血耐我不管，反正不值钱")
+
+                                    pass
+
+                                else:
+
+                                    if (attrList[indexMax] - attrList[indexSecondMax]) <= (totalDianshu - dengji):  # 如果耐力加点数-体质加点数 小于 总加点数-等级数 ，那么可以确定为血功宝宝
+
+                                        if thirdAttr == 1:  # 耐血法宝宝
+
+                                            if (attrList[indexMax] - attrList[indexThirdMax]) < dengji:  # 如果体质加点数-法力加点数 小于 总加点数-等级数 ，那么可以确定为耐法宝宝
+
+                                                # print("耐最高，技能大于4技能，血耐法宝宝")
+
+                                                everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                                                everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                                                everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                                                everyzhaohuanshouDict["dengji"] = dengji
+
+                                                allSummonInfoList.append(everyzhaohuanshouDict)
+
+                                            else:
+
+                                                # print("耐最高，技能大于4技能，是血耐宝宝")
+
+                                                pass
+
+
+                                        elif thirdAttr == 2:  # 耐血攻宝宝
+
+                                            if (attrList[indexMax] - attrList[indexThirdMax]) < dengji:  # 如果体质加点数-法力加点数 小于 总加点数-等级数 ，那么可以确定为耐法宝宝
+
+                                                # print("耐最高，技能大于4技能，血耐攻宝宝")
+
+                                                everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                                                everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                                                everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                                                everyzhaohuanshouDict["dengji"] = dengji
+
+                                                allSummonInfoList.append(everyzhaohuanshouDict)
+
+                                            else:
+
+                                                # print("耐最高，技能大于4技能，是血耐宝宝")
+
+                                                pass
+                                        else:
+
+                                            # print("耐最高，血耐宝宝")
+
+                                            pass
+
+                                    else:
+
+                                        # print("耐最高，耐宝宝")
+
+                                        pass
+
+                            elif indexSecondMax == 1:  # 确定是否为耐法宝宝
+
+                                if (attrList[indexMax] - attrList[indexSecondMax]) <= (totalDianshu - dengji):  # 如果体质加点数-法力加点数 小于 总加点数-等级数 ，那么可以确定为耐法宝宝
+
+                                    # print("耐最高，耐法宝宝")
+
+                                    everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                                    everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                                    everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                                    everyzhaohuanshouDict["dengji"] = dengji
+
+                                    allSummonInfoList.append(everyzhaohuanshouDict)
+
+                                else:  # 确定为血宝宝
+
+                                    # print("耐最高，耐宝宝")
+
+                                    pass
+
+                            elif indexSecondMax == 2:  # 确定是否为耐功宝宝
+
+                                if (attrList[indexMax] - attrList[indexSecondMax]) <= (totalDianshu - dengji):  # 如果体质加点数-法力加点数 小于 总加点数-等级数 ，那么可以确定为耐功宝宝
+
+                                    # print("耐最高，耐攻宝宝")
+
+                                    everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                                    everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                                    everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                                    everyzhaohuanshouDict["dengji"] = dengji
+
+                                    allSummonInfoList.append(everyzhaohuanshouDict)
+
+                                else:  # 确定为血宝宝
+
+                                    # print("耐最高，耐宝宝")
+
+                                    pass
+
+                            else:  # 确定是否为敏耐宝宝
+
+                                # print("耐最高，敏耐宝宝")
+
+                                pass
+
+                        else:  # 至少是只敏宝宝
+
+                            if indexSecondMax == 0:  # 确定是否为血敏宝宝
+
+                                # print("敏最高，血敏宝宝")
+
+                                pass
+
+                            elif indexSecondMax == 1:  # 确定是否为敏法宝宝
+
+                                if (attrList[indexMax] - attrList[indexSecondMax]) <= (totalDianshu - dengji):  # 如果体质加点数-法力加点数 小于 总加点数-等级数 ，那么可以确定为敏法宝宝
+
+                                    # print("敏最高，敏法宝宝")
+
+                                    everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                                    everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                                    everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                                    everyzhaohuanshouDict["dengji"] = dengji
+
+                                    allSummonInfoList.append(everyzhaohuanshouDict)
+
+                                else:  # 确定为血宝宝
+
+                                    # print("敏最高，敏宝宝")
+
+                                    pass
+
+                            elif indexSecondMax == 2:  # 确定是否为敏功宝宝
+
+                                if (attrList[indexMax] - attrList[indexSecondMax]) <= (totalDianshu - dengji):  # 如果体质加点数-法力加点数 小于 总加点数-等级数 ，那么可以确定为敏功宝宝
+
+                                    # print("敏最高，敏攻宝宝")
+
+                                    everyzhaohuanshouDict["zhaohuanshouSkillCodes"] = zhaohuanshouSkillCodes
+
+                                    everyzhaohuanshouDict["zhaohuanshouType"] = zhaohuanshouCode
+
+                                    everyzhaohuanshouDict["jinengNum"] = len(zhaohuanshouJinengList)
+
+                                    everyzhaohuanshouDict["dengji"] = dengji
+
+                                    allSummonInfoList.append(everyzhaohuanshouDict)
+
+                                else:  # 确定为血宝宝
+
+                                    # print("敏最高，敏宝宝")
+
+                                    pass
+
+                            else:  # 确定是否为敏耐宝宝
+
+                                # print("敏最高，敏耐宝宝")
+
+                                pass
+
+        return allSummonInfoList
+
+
+    """
+    
+        爬虫关闭的时候调用
+    
+    """
+
+    def close(spider, reason):
+
+        print(time.time())
+
+    """
+    
+        请求一个类似的召唤兽，去拿到它的价格
+    
+    """
+    def parseOneSummonPrice(self, response):
+
+        content = response.body_as_unicode()  # 拿到网页返回的内容
+
+        con = re.findall(r'{.*}', content)  # 正则匹配到{xxxxxx}中的内容，其余一概不要
+
+        contentDict = json.loads(con[0])  # 将json字符串转换成dict数据
+
+        summonInfo = contentDict.get("equips", False)
+
+        price = 0
+
+        if summonInfo:
+
+            summonInfo = summonInfo[0]
+
+            summonPrice = summonInfo.get("price_int", False)
+
+            if summonPrice:
+
+                price = summonPrice
+
+        price = price / 100
+
+        accountItem = response.meta["accountItem"]
+
+        summonInfoResponse = response.meta["summonInfo"]
+
+        detail = "召唤兽种类:"+str(summonInfoResponse["zhaohuanshouType"])+",召唤兽技能:"+summonInfoResponse["zhaohuanshouSkillCodes"]+"召唤兽价格:"+str(price)+"、"
+
+        accountItem["summonPriceAndDetail"] = accountItem["summonPriceAndDetail"] + detail
+
+        accountItem["summonPrice"] = accountItem["summonPrice"] + price
+
+        accountItem["summonNum"] = accountItem["summonNum"] + 1
+
+        # if accountItem["beforeSummonNum"] == accountItem["summonNum"]:
+        #
+        #     print(accountItem["linkAddr"]+"已经完毕\r\n")
+        #
+        #     print(accountItem)
+        #
+        #     if (accountItem["basicPrice"] + accountItem["jinyiPrice"] + accountItem["qiangzhuangshensuPrice"] + accountItem["shenqiPrice"] + accountItem["summonPrice"] + accountItem["xiangruiPrice"] - 3000) > accountItem["salePrice"]:
+        #
+        #         mailer = MailSender("smtp.163.com", "18168820608@163.com", smtpuser="18168820608@163.com", smtppass="tangwei123456", smtpport=25)
+        #
+        #         mailer.send(["jsdy_tw1519@163.com"], "符合估算要求的账号", accountItem["linkAddr"])
+        #
+        #         yield accountItem
+        #
+        # else:
+        #
+        #     pass
+
+
+
+
+
+    def getSecondMax(self, tmpList):
+
+        tmp = sorted(tmpList, key=lambda x:x)
+
+        return tmp[-2]
+
+    def getThirdMax(self, tmpList):
+
+        tmp = sorted(tmpList, key=lambda x:x)
+
+        return tmp[-3]
+
+    """
+
+       计算强壮和神速的价格
+
+    """
+    def calculateQiangzhuangAndShensu(self, anotherInfo):
+
+        price = 0
+
+        allSkills = anotherInfo.get("all_skills", False)
+
+        if allSkills:
+
+            qiangzhuang = allSkills.get("230", 0)
+
+            if qiangzhuang == 36: price += 500
+
+            shensu = allSkills.get("237", 0)
+
+            if shensu == 36: price += 500
+
+        return price
+
+

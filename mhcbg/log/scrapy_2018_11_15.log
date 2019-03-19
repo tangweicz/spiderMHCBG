@@ -1,0 +1,1023 @@
+2018-11-15 11:06:47 [scrapy.utils.log] INFO: Scrapy 1.5.1 started (bot: mhcbg)
+2018-11-15 11:06:47 [scrapy.utils.log] INFO: Versions: lxml 4.2.3.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.5.0, w3lib 1.19.0, Twisted 18.9.0, Python 3.6.6rc1 (v3.6.6rc1:1015e38be4, Jun 12 2018, 01:14:33) - [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Darwin-17.7.0-x86_64-i386-64bit
+2018-11-15 11:06:47 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'mhcbg', 'CONCURRENT_REQUESTS': 100, 'LOG_FILE': 'log/scrapy_2018_11_15.log', 'NEWSPIDER_MODULE': 'mhcbg.spiders', 'SPIDER_MODULES': ['mhcbg.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
+2018-11-15 11:06:47 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2018-11-15 11:06:47 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'mhcbg.middlewares.cbgDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats',
+ 'mhcbg.middlewares.allProcessExceptionMiddleware']
+2018-11-15 11:06:47 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-11-15 11:06:47 [scrapy.middleware] INFO: Enabled item pipelines:
+['mhcbg.pipelines.mhcbgImgDownloadPipeline']
+2018-11-15 11:06:47 [scrapy.core.engine] INFO: Spider opened
+2018-11-15 11:06:47 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-11-15 11:06:47 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-11-15 11:06:47 [root] INFO: ---------------------------------https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search
+2018-11-15 11:06:47 [root] INFO: -----------------------------------数据库中取到的代理地址列表：[<mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fef5c0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fef8d0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fef9b0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fef9e8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefa20>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefa58>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fef978>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fef668>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fef898>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fef7b8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fef6a0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fef6d8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fef710>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefa90>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefb00>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefac8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefb38>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefb70>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefba8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefbe0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefc18>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefc50>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefc88>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefcc0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefcf8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefd30>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefd68>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefda0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefdd8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefe10>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefe48>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefe80>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefeb8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111fefef0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111feff28>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111feff60>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111feff98>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x111feffd0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903048>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903080>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129030b8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129030f0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903128>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903160>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903198>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129031d0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903208>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903240>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903278>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129032b0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129032e8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903320>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903358>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903390>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129033c8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903400>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903438>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903470>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129034a8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129034e0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903518>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903550>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903588>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129035c0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129035f8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903630>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903668>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129036a0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129036d8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903710>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903748>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903780>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129037b8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129037f0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903828>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903860>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903898>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129038d0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903908>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903940>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903978>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129039b0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1129039e8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903a20>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903a58>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903a90>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x112903ac8>]
+2018-11-15 11:06:47 [root] INFO: **********************数据库内不为空，开始去挨个验证每一个是否可用
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 223.203.0.14:8000
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 218.60.8.83:3129
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 60.216.101.46:32868
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.101.254:35394
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 180.180.156.87:36628
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 45.64.122.210:44156
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.10.189.20:40409
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 114.97.185.195:808
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.52.90.48:34739
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.10.186.30:43489
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 58.26.10.67:8080
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 31.148.121.233:30109
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 188.168.51.13:34930
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.52.90.42:45913
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 119.28.195.93:8888
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 125.27.251.87:48946
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 95.154.70.49:30656
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 101.51.138.111:37945
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 193.169.81.233:60126
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 176.106.12.65:30120
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 87.240.58.30:34037
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 58.240.224.252:33035
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 180.175.136.195:39061
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 183.15.172.23:55364
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 120.236.81.88:38677
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 117.158.65.216:46813
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 111.8.36.168:40656
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 117.158.152.100:48622
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 119.28.230.147:8888
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 42.48.118.106:38877
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.138.232.114:36074
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 42.55.253.215:1133
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 119.1.97.193:42563
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 183.48.24.94:54973
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 122.116.113.203:30278
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.143.37.169:54677
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 218.24.16.198:61610
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 203.210.232.84:52285
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 109.110.42.210:41258
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.183.59:37832
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 180.180.217.122:45406
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.233.100:49049
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.241.226.25:43584
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.172.181.147:33487
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.220.199:35468
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 122.49.114.2:34982
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.179.147.5:54356
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 188.186.186.146:32156
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 179.49.113.14:32233
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.52.229.166:56480
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 222.186.21.169:57273
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 163.125.248.217:8118
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 115.219.107.69:8010
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 119.28.212.29:8888
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 220.135.132.82:42060
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 218.204.53.161:36190
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 140.227.33.30:3128
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 113.190.235.50:34619
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 125.26.109.114:34205
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.175.176.136:55156
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.220.152:45206
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.52.51.13:42268
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.220.174:32701
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.2.169.44:47315
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 180.180.156.125:54912
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.175.93.132:50140
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.234.60:60425
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 95.154.68.142:30475
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 101.109.255.48:46737
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 125.25.57.101:46550
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.175.93.144:48225
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 217.18.139.18:42658
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 221.121.12.238:36077
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 95.154.71.77:42350
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.229.177.51:38182
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 125.26.7.120:57040
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.9.190.225:36117
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 203.189.89.1:53281
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 75.80.242.9:41007
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 119.82.253.144:61950
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 212.72.159.22:30323
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: http://223.203.0.14:8000 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.99.163:8080
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 115.201.196.207:8118
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 122.117.65.107:31515
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 79.101.98.2:53281
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 201.244.107.202:59206
+2018-11-15 11:06:47 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 109.94.127.33:23500
+2018-11-15 11:06:48 [urllib3.connectionpool] DEBUG: http://218.60.8.83:3129 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:48 [urllib3.connectionpool] DEBUG: http://140.227.33.30:3128 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:48 [urllib3.connectionpool] DEBUG: http://125.26.7.120:57040 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:48 [urllib3.connectionpool] DEBUG: http://1.2.169.44:47315 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:48 [urllib3.connectionpool] DEBUG: http://118.175.176.136:55156 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://118.174.234.60:60425 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://180.180.156.87:36628 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://58.26.10.67:8080 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://118.174.220.199:35468 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://118.174.220.152:45206 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://118.175.93.132:50140 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://60.216.101.46:32868 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://31.148.121.233:30109 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://182.52.51.13:42268 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://221.121.12.238:36077 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://118.174.220.174:32701 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://119.28.230.147:8888 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://101.109.255.48:46737 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:49 [urllib3.connectionpool] DEBUG: http://176.106.12.65:30120 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:50 [urllib3.connectionpool] DEBUG: http://95.154.71.77:42350 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:50 [urllib3.connectionpool] DEBUG: http://87.240.58.30:34037 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:50 [urllib3.connectionpool] DEBUG: http://193.169.81.233:60126 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:50 [urllib3.connectionpool] DEBUG: http://119.28.212.29:8888 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:51 [urllib3.connectionpool] DEBUG: http://109.94.127.33:23500 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): tpv.daxiangdaili.com:80
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: http://tpv.daxiangdaili.com:80 "GET /ip/?tid=555093498677388&num=100&delay=3&category=2&protocol=https&filter=on HTTP/1.1" 200 None
+2018-11-15 11:06:58 [root] INFO: 从代理上拿到的IP地址：
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 88.99.149.188:31288
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.28.84.59:50732
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.88.221.105:31205
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 124.41.211.213:31029
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 124.41.211.170:50586
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.52.74.73:36286
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.194.192.78:42793
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.246.224.30:31773
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 187.189.46.207:30687
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 124.41.211.158:23500
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 186.96.118.226:23500
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.97.95.197:8080
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.196.64.253:55220
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.65.120.92:41552
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 91.203.165.19:43687
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 110.93.214.36:31993
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 189.126.79.118:43093
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.112.129.106:31094
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 181.10.135.222:23500
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 186.226.171.163:48698
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.235:58704
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.28.108.181:43726
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.99.143:49834
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 181.40.127.18:39393
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.63.197.48:53281
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 95.165.172.90:60496
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.220.110:39025
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 170.244.211.120:53596
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.194.88.129:57751
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 179.228.189.67:45145
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.5.228.227:52429
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.236.114.38:49638
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 216.183.54.132:60683
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 176.110.121.90:21776
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 190.149.216.146:47463
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 160.238.136.137:23500
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.99.85:38390
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 109.183.189.238:53959
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 96.9.69.164:53281
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 62.148.151.253:53570
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 27.147.217.154:43252
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 177.53.56.127:59008
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.102.70:39339
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 181.168.206.106:38024
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.97.45:35662
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.29.221.209:37725
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 193.30.243.58:31903
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 109.86.219.28:35647
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 109.74.143.45:36529
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.96.203:52770
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 80.95.103.137:8080
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.14.250.219:8080
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 67.231.63.29:32231
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 93.170.15.177:37886
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 187.95.11.6:55571
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.133:61029
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.224.186.20:41995
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 213.76.149.172:61107
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 81.162.195.149:59965
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 51.255.58.83:8080
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 213.235.177.100:31306
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 186.226.172.12:23500
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 95.172.59.30:48526
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.101.76:44464
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 176.103.45.27:46994
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.230:41654
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.16:38692
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 181.10.230.98:32212
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 43.240.5.113:48964
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 202.61.52.14:60267
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 181.129.139.202:32885
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 116.206.96.210:55475
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 125.27.251.236:58946
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 5.167.54.233:35772
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 217.182.10.106:8080
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 187.107.199.86:60346
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 93.170.193.240:44983
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 145.239.81.238:80
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.143:40751
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 95.67.10.22:53281
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 202.70.88.13:34876
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.199:54004
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.211.76.18:36423
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 27.147.218.149:43721
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 186.125.59.8:57486
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 202.166.220.233:61300
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 181.57.176.226:58625
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 170.79.177.58:43257
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.212.128.7:42237
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 113.161.35.108:30028
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 86.125.112.183:47014
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 124.41.215.160:46044
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 195.135.212.186:38852
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 81.190.208.52:41660
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 45.77.6.65:8118
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 187.93.134.175:53060
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 176.111.180.209:54237
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 124.41.213.3:35821
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 77.70.115.104:8080
+2018-11-15 11:06:58 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.52.134.90:37339
+2018-11-15 11:06:59 [urllib3.connectionpool] DEBUG: http://1.20.100.235:58704 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:59 [urllib3.connectionpool] DEBUG: http://1.20.100.133:61029 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:59 [urllib3.connectionpool] DEBUG: http://217.182.10.106:8080 "GET http://www.hualongxiang.com/ HTTP/1.1" 502 None
+2018-11-15 11:06:59 [urllib3.connectionpool] DEBUG: http://1.20.97.45:35662 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:06:59 [urllib3.connectionpool] DEBUG: http://91.203.165.19:43687 "GET http://www.hualongxiang.com/ HTTP/1.1" 504 304
+2018-11-15 11:06:59 [urllib3.connectionpool] DEBUG: http://1.20.101.76:44464 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://1.20.100.143:40751 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://1.20.99.143:49834 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://1.20.100.230:41654 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://1.20.96.203:52770 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://124.41.211.213:31029 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://45.77.6.65:8118 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://103.14.250.219:8080 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://182.52.74.73:36286 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://1.20.102.70:39339 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://93.170.15.177:37886 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://95.165.172.90:60496 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://124.41.215.160:46044 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://118.174.220.110:39025 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://216.183.54.132:60683 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://1.20.100.199:54004 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://185.196.64.253:55220 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://62.148.151.253:53570 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://103.236.114.38:49638 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://103.29.221.209:37725 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://176.103.45.27:46994 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://103.212.128.7:42237 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:00 [urllib3.connectionpool] DEBUG: http://27.147.217.154:43252 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:01 [urllib3.connectionpool] DEBUG: http://186.125.59.8:57486 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:01 [urllib3.connectionpool] DEBUG: http://202.70.88.13:34876 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:01 [urllib3.connectionpool] DEBUG: http://110.93.214.36:31993 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:01 [urllib3.connectionpool] DEBUG: http://27.147.218.149:43721 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:01 [urllib3.connectionpool] DEBUG: http://103.224.186.20:41995 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:01 [urllib3.connectionpool] DEBUG: http://186.226.171.163:48698 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:01 [urllib3.connectionpool] DEBUG: http://103.28.84.59:50732 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:01 [urllib3.connectionpool] DEBUG: http://103.88.221.105:31205 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:02 [urllib3.connectionpool] DEBUG: http://124.41.213.3:35821 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:02 [urllib3.connectionpool] DEBUG: http://124.41.211.170:50586 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:02 [urllib3.connectionpool] DEBUG: http://185.5.228.227:52429 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:02 [urllib3.connectionpool] DEBUG: http://176.111.180.209:54237 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:03 [urllib3.connectionpool] DEBUG: http://96.9.69.164:53281 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:07:09 [root] INFO: ####################################['http://223.203.0.14:8000', 'http://218.60.8.83:3129', 'http://140.227.33.30:3128', 'http://125.26.7.120:57040', 'http://60.216.101.46:32868', 'http://118.175.176.136:55156', 'http://180.180.156.87:36628', 'http://182.52.51.13:42268', 'http://118.174.234.60:60425', 'http://118.174.220.199:35468', 'http://118.174.220.152:45206', 'http://31.148.121.233:30109', 'http://1.2.169.44:47315', 'http://176.106.12.65:30120', 'http://95.154.71.77:42350', 'http://101.109.255.48:46737', 'http://118.174.220.174:32701', 'http://87.240.58.30:34037', 'http://118.175.93.132:50140', 'http://119.28.230.147:8888', 'http://109.94.127.33:23500', 'http://193.169.81.233:60126', 'http://1.20.100.235:58704', 'http://1.20.100.133:61029', 'http://1.20.97.45:35662', 'http://103.14.250.219:8080', 'http://182.52.74.73:36286', 'http://1.20.100.143:40751', 'http://1.20.102.70:39339', 'http://1.20.99.143:49834', 'http://1.20.100.230:41654', 'http://1.20.96.203:52770', 'http://1.20.101.76:44464', 'http://93.170.15.177:37886', 'http://45.77.6.65:8118', 'http://124.41.215.160:46044', 'http://185.196.64.253:55220', 'http://216.183.54.132:60683', 'http://1.20.100.199:54004', 'http://103.212.128.7:42237', 'http://118.174.220.110:39025', 'http://62.148.151.253:53570', 'http://186.125.59.8:57486', 'http://27.147.217.154:43252', 'http://110.93.214.36:31993', 'http://95.165.172.90:60496', 'http://27.147.218.149:43721', 'http://103.224.186.20:41995', 'http://186.226.171.163:48698', 'http://103.29.221.209:37725', 'http://103.88.221.105:31205', 'http://185.5.228.227:52429', 'http://124.41.211.213:31029', 'http://176.111.180.209:54237', 'http://176.103.45.27:46994', 'http://124.41.213.3:35821', 'http://96.9.69.164:53281', 'http://124.41.211.170:50586']
+2018-11-15 11:07:09 [root] INFO: ####################################http://1.20.101.76:44464
+2018-11-15 11:07:09 [root] INFO: +++++++++++++++++++++++++++++++++++++++++正在用http://1.20.101.76:44464的代理去请求，https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search
+2018-11-15 11:07:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search> (referer: None)
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102211.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102576.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102128.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102151.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102071.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102331.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102305.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102708.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102335.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102122.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102036.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102077.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102023.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102587.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102306.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102015.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102150.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102121.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102711.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102329.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102578.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102076.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102085.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102002.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102130.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102102.gif> referred in <None>
+2018-11-15 11:07:13 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102086.gif> referred in <None>
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=3&eid=201808091000113-3-WC2GZ5EJY7OB4B&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=212&eid=201811081200113-212-3AXGEQFSHXQR&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=657&eid=201810231800113-657-G8473TPDYEQZ&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=459&eid=201810071700113-459-ACFSN5QZTKCK&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=212&eid=201811092100113-212-MN6OJ9PBAN9A&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=459&eid=201809292200113-459-0WJ1C4NWDMAV&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=583&eid=201809141800113-583-COW4GCH38OOH&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=9&eid=201810251500113-9-H0OIM8DG3NETJ4&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=583&eid=201809131700113-583-PJLLX6ZRCUUI&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=199&eid=201811121400113-199-MCWDIADGR1RP&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=723&eid=201811121900113-723-EOGKMXUPVHPF&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=352&eid=201810231400113-352-YO2IRV29L7AR&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=215&eid=201810302200113-215-W21WE8RUNLWA&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=138&eid=201810262000113-138-1GMLO8DUQEVQ&o&equip_refer=1
+2018-11-15 11:07:13 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=414&eid=201811091300113-414-IJ7U44REPATP&o&equip_refer=1
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102211.gif', 'path': 'full/83d529ef4829b8685b2ab00b4b83226988406ab2.jpg', 'checksum': '8fc3a8e285dccc9c774e2d4e06901d2c'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102576.gif', 'path': 'full/a6f11fc60e81e7e24a5ddd3a8e1a401496cea647.jpg', 'checksum': '72a0a69c680ff29d48c0a2da74b6c110'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102128.gif', 'path': 'full/d8b610d2dc1bb27de0a720ea65e30bc8b587830d.jpg', 'checksum': '8d30225ac8efc2ac4dbb9466523c4420'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102071.gif', 'path': 'full/58f3789c6234636b92aae40ba735fbe254075044.jpg', 'checksum': '1c88730fbd3ede31d16de2f3355e825b'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102331.gif', 'path': 'full/42ae612bf95e08c259b50082bfc64232e40bd170.jpg', 'checksum': '35e39e0850e325e0858603cb8e7dc4d4'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102331.gif', 'path': 'full/42ae612bf95e08c259b50082bfc64232e40bd170.jpg', 'checksum': '35e39e0850e325e0858603cb8e7dc4d4'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102305.gif', 'path': 'full/dd2c224dfedc69a1fcb01f9f732997f134f50624.jpg', 'checksum': '1cc17fc87c362eb4bea197e59501f7df'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102576.gif', 'path': 'full/a6f11fc60e81e7e24a5ddd3a8e1a401496cea647.jpg', 'checksum': '72a0a69c680ff29d48c0a2da74b6c110'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102708.gif', 'path': 'full/d41163482e2857a680c6a5a8a1ecc86fe77ef596.jpg', 'checksum': '820f754f589978a30e170adbde82404a'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102211.gif', 'path': 'full/83d529ef4829b8685b2ab00b4b83226988406ab2.jpg', 'checksum': '8fc3a8e285dccc9c774e2d4e06901d2c'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102211.gif', 'path': 'full/83d529ef4829b8685b2ab00b4b83226988406ab2.jpg', 'checksum': '8fc3a8e285dccc9c774e2d4e06901d2c'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102335.gif', 'path': 'full/9bc0bdeb1e0b0632f2389b040b504b03f9c02576.jpg', 'checksum': 'cc9b970ad45908764a0cc05625d6cf00'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102331.gif', 'path': 'full/42ae612bf95e08c259b50082bfc64232e40bd170.jpg', 'checksum': '35e39e0850e325e0858603cb8e7dc4d4'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102122.gif', 'path': 'full/f41b740225528770c6fbae8cf38d8b53bfce61f4.jpg', 'checksum': '62949f56e3b4a4bafb1fcf60d39cd874'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102036.gif', 'path': 'full/95e847db10ad49a012d2e7ad8fa4b2b2de4f676a.jpg', 'checksum': '495d56ddc6e34dc2c710c51b33bbdd91'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102071.gif', 'path': 'full/58f3789c6234636b92aae40ba735fbe254075044.jpg', 'checksum': '1c88730fbd3ede31d16de2f3355e825b'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102077.gif', 'path': 'full/8a70433e0cf27f39ee9590a614897c8d49b5dfcf.jpg', 'checksum': 'b6027665d01041f6ebd37a06a01d81f9'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102023.gif', 'path': 'full/f7e5610e925088d447acf58b23981085b4036b21.jpg', 'checksum': '86e096e940cc215483aeee7df919f1a4'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102128.gif', 'path': 'full/d8b610d2dc1bb27de0a720ea65e30bc8b587830d.jpg', 'checksum': '8d30225ac8efc2ac4dbb9466523c4420'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102576.gif', 'path': 'full/a6f11fc60e81e7e24a5ddd3a8e1a401496cea647.jpg', 'checksum': '72a0a69c680ff29d48c0a2da74b6c110'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102587.gif', 'path': 'full/857ecb503dd5432efbb98989fcf8561e163fa612.jpg', 'checksum': 'f97584daae2bf07e265ad641b7418efd'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102306.gif', 'path': 'full/4be5841d1faaa2c5e3a7c1f83986a12f477a869f.jpg', 'checksum': '47b1230bf9b02014e9edd6e0cacbd5ac'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102015.gif', 'path': 'full/1e242fac0aebaa1269776e29afaa8fbe21acd80b.jpg', 'checksum': '272d49e9ba9906fa4c0e89523a49fda8'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102150.gif', 'path': 'full/26fef31a518fbf5c25b719286bc27c00050f6c7d.jpg', 'checksum': 'ab1e285808fd7db07ba098e4a4a18ac1'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102077.gif', 'path': 'full/8a70433e0cf27f39ee9590a614897c8d49b5dfcf.jpg', 'checksum': 'b6027665d01041f6ebd37a06a01d81f9'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102121.gif', 'path': 'full/199c8fb0581a5f30631bd4974fe19cca1df5bc9f.jpg', 'checksum': 'ccc396d338b6b05a1f6fd9dc6e326d43'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102331.gif', 'path': 'full/42ae612bf95e08c259b50082bfc64232e40bd170.jpg', 'checksum': '35e39e0850e325e0858603cb8e7dc4d4'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102711.gif', 'path': 'full/64f544db982bec717b0a957bd60ab8a90b4f3425.jpg', 'checksum': '40474d7627cb2d6c2ecae4457daec5d1'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102329.gif', 'path': 'full/bd7223332767c07cfac40f02042a600ed9eb9800.jpg', 'checksum': '9afdf589e60ec45f1a0e95196451870b'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102578.gif', 'path': 'full/9ab3905cea69e468c779e4f8ac364208126b29a3.jpg', 'checksum': '4924a5442c0e85a2b9c476240dd75ab7'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102071.gif', 'path': 'full/58f3789c6234636b92aae40ba735fbe254075044.jpg', 'checksum': '1c88730fbd3ede31d16de2f3355e825b'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102076.gif', 'path': 'full/f179a022c904becf43bd8b6e95eef812dea0d054.jpg', 'checksum': '91a4756f294c2a390c1fe1dc0a36b4b9'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102077.gif', 'path': 'full/8a70433e0cf27f39ee9590a614897c8d49b5dfcf.jpg', 'checksum': 'b6027665d01041f6ebd37a06a01d81f9'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102076.gif', 'path': 'full/f179a022c904becf43bd8b6e95eef812dea0d054.jpg', 'checksum': '91a4756f294c2a390c1fe1dc0a36b4b9'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102085.gif', 'path': 'full/4db65fe8d89005e8baf149c1661b5a60cf6384a6.jpg', 'checksum': 'f69dba645eaa0d43072056b3899a1ed6'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102085.gif', 'path': 'full/4db65fe8d89005e8baf149c1661b5a60cf6384a6.jpg', 'checksum': 'f69dba645eaa0d43072056b3899a1ed6'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102002.gif', 'path': 'full/e7e42c647abcf211b03fd69a656020e85cbde6d1.jpg', 'checksum': 'eca5d155e1f106e0dbc8867edeaa5e10'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102711.gif', 'path': 'full/64f544db982bec717b0a957bd60ab8a90b4f3425.jpg', 'checksum': '40474d7627cb2d6c2ecae4457daec5d1'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102211.gif', 'path': 'full/83d529ef4829b8685b2ab00b4b83226988406ab2.jpg', 'checksum': '8fc3a8e285dccc9c774e2d4e06901d2c'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102077.gif', 'path': 'full/8a70433e0cf27f39ee9590a614897c8d49b5dfcf.jpg', 'checksum': 'b6027665d01041f6ebd37a06a01d81f9'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102130.gif', 'path': 'full/5b853fc3593b633af467758bc2a8a791138355ef.jpg', 'checksum': '112f29d06b8538cf429e95c7533f6195'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102102.gif', 'path': 'full/f045d3226c364ce9934ddef73f6140e97a8c0722.jpg', 'checksum': '70bb231f60dc834c512571152cb0e279'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102086.gif', 'path': 'full/1aee6a08871f6458b6879a837f8109db81b1ed73.jpg', 'checksum': '93283503d1f989d3e210de87aaa29d71'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102071.gif', 'path': 'full/58f3789c6234636b92aae40ba735fbe254075044.jpg', 'checksum': '1c88730fbd3ede31d16de2f3355e825b'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102578.gif', 'path': 'full/9ab3905cea69e468c779e4f8ac364208126b29a3.jpg', 'checksum': '4924a5442c0e85a2b9c476240dd75ab7'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102086.gif', 'path': 'full/1aee6a08871f6458b6879a837f8109db81b1ed73.jpg', 'checksum': '93283503d1f989d3e210de87aaa29d71'})]
+2018-11-15 11:07:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:07:13 [scrapy.core.engine] INFO: Closing spider (finished)
+2018-11-15 11:07:13 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 639,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 93531,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'file_count': 27,
+ 'file_status_count/uptodate': 27,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 11, 15, 3, 7, 13, 861708),
+ 'item_scraped_count': 54,
+ 'log_count/DEBUG': 338,
+ 'log_count/INFO': 83,
+ 'memusage/max': 55349248,
+ 'memusage/startup': 55349248,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2018, 11, 15, 3, 6, 47, 547396)}
+2018-11-15 11:07:13 [scrapy.core.engine] INFO: Spider closed (finished)
+2018-11-15 11:22:55 [scrapy.utils.log] INFO: Scrapy 1.5.1 started (bot: mhcbg)
+2018-11-15 11:22:55 [scrapy.utils.log] INFO: Versions: lxml 4.2.3.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.5.0, w3lib 1.19.0, Twisted 18.9.0, Python 3.6.6rc1 (v3.6.6rc1:1015e38be4, Jun 12 2018, 01:14:33) - [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Darwin-17.7.0-x86_64-i386-64bit
+2018-11-15 11:22:55 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'mhcbg', 'CONCURRENT_REQUESTS': 100, 'LOG_FILE': 'log/scrapy_2018_11_15.log', 'NEWSPIDER_MODULE': 'mhcbg.spiders', 'SPIDER_MODULES': ['mhcbg.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
+2018-11-15 11:22:55 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2018-11-15 11:22:55 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'mhcbg.middlewares.cbgDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats',
+ 'mhcbg.middlewares.allProcessExceptionMiddleware']
+2018-11-15 11:22:55 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-11-15 11:22:55 [scrapy.middleware] INFO: Enabled item pipelines:
+['mhcbg.pipelines.mhcbgImgDownloadPipeline']
+2018-11-15 11:22:55 [scrapy.core.engine] INFO: Spider opened
+2018-11-15 11:22:55 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-11-15 11:22:55 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-11-15 11:22:55 [root] INFO: ---------------------------------https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search
+2018-11-15 11:22:55 [root] INFO: -----------------------------------数据库中取到的代理地址列表：[<mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a05f8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0908>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a09e8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0a20>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0a58>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0a90>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a09b0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a06a0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a08d0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a07f0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a06d8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0710>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0748>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0ac8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0b00>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0b38>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0b70>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0ba8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0be0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0c18>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0c50>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0c88>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0cc0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0cf8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0d30>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0d68>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0da0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0dd8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0e10>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0e48>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0e80>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0eb8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0ef0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0f28>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0f60>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0f98>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1094a0fd0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad048>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad080>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad0b8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad0f0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad128>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad160>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad198>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad1d0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad208>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad240>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad278>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad2b0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad2e8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad320>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad358>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad390>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad3c8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad400>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad438>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad470>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x1095ad4a8>]
+2018-11-15 11:22:55 [root] INFO: **********************数据库内不为空，开始去挨个验证每一个是否可用
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 223.203.0.14:8000
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 180.180.156.87:36628
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 31.148.121.233:30109
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 218.60.8.83:3129
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 193.169.81.233:60126
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 176.106.12.65:30120
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 60.216.101.46:32868
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 119.28.230.147:8888
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 87.240.58.30:34037
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 140.227.33.30:3128
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.175.176.136:55156
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.220.199:35468
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.220.152:45206
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.52.51.13:42268
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.220.174:32701
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.2.169.44:47315
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.234.60:60425
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.175.93.132:50140
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 101.109.255.48:46737
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 95.154.71.77:42350
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 125.26.7.120:57040
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.235:58704
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 109.94.127.33:23500
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.133:61029
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.97.45:35662
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.14.250.219:8080
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.52.74.73:36286
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.143:40751
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.102.70:39339
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.99.143:49834
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.230:41654
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.96.203:52770
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.101.76:44464
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 93.170.15.177:37886
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 45.77.6.65:8118
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 124.41.215.160:46044
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.196.64.253:55220
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.199:54004
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 216.183.54.132:60683
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.212.128.7:42237
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.220.110:39025
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 62.148.151.253:53570
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 186.125.59.8:57486
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 27.147.217.154:43252
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 110.93.214.36:31993
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 95.165.172.90:60496
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 27.147.218.149:43721
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.224.186.20:41995
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 186.226.171.163:48698
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.29.221.209:37725
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.88.221.105:31205
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.5.228.227:52429
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 124.41.211.213:31029
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 176.111.180.209:54237
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 176.103.45.27:46994
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 124.41.213.3:35821
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 96.9.69.164:53281
+2018-11-15 11:22:55 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 124.41.211.170:50586
+2018-11-15 11:22:56 [urllib3.connectionpool] DEBUG: http://223.203.0.14:8000 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:56 [urllib3.connectionpool] DEBUG: http://119.28.230.147:8888 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:56 [urllib3.connectionpool] DEBUG: http://218.60.8.83:3129 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:56 [urllib3.connectionpool] DEBUG: http://140.227.33.30:3128 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:56 [urllib3.connectionpool] DEBUG: http://1.20.99.143:49834 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:56 [urllib3.connectionpool] DEBUG: http://1.20.97.45:35662 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:56 [urllib3.connectionpool] DEBUG: http://1.20.100.133:61029 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:56 [urllib3.connectionpool] DEBUG: http://1.20.102.70:39339 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://118.175.176.136:55156 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://118.174.220.110:39025 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://1.20.96.203:52770 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://1.20.101.76:44464 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://1.20.100.143:40751 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://1.20.100.199:54004 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://118.174.220.199:35468 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://180.180.156.87:36628 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://1.2.169.44:47315 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://118.174.220.152:45206 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://176.106.12.65:30120 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://118.174.220.174:32701 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://182.52.74.73:36286 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://124.41.211.170:50586 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://118.174.234.60:60425 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:57 [urllib3.connectionpool] DEBUG: http://62.148.151.253:53570 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:58 [urllib3.connectionpool] DEBUG: http://124.41.211.213:31029 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:58 [urllib3.connectionpool] DEBUG: http://60.216.101.46:32868 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:58 [urllib3.connectionpool] DEBUG: http://124.41.213.3:35821 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:58 [urllib3.connectionpool] DEBUG: http://186.125.59.8:57486 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:58 [urllib3.connectionpool] DEBUG: http://182.52.51.13:42268 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:58 [urllib3.connectionpool] DEBUG: http://1.20.100.230:41654 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:58 [urllib3.connectionpool] DEBUG: http://176.103.45.27:46994 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:58 [urllib3.connectionpool] DEBUG: http://95.165.172.90:60496 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:59 [urllib3.connectionpool] DEBUG: http://87.240.58.30:34037 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:59 [urllib3.connectionpool] DEBUG: http://103.88.221.105:31205 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:59 [urllib3.connectionpool] DEBUG: http://118.175.93.132:50140 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:22:59 [urllib3.connectionpool] DEBUG: http://125.26.7.120:57040 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:01 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): tpv.daxiangdaili.com:80
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: http://tpv.daxiangdaili.com:80 "GET /ip/?tid=555093498677388&num=100&delay=3&category=2&protocol=https&filter=on HTTP/1.1" 200 None
+2018-11-15 11:23:02 [root] INFO: 从代理上拿到的IP地址：
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 111.125.87.199:53281
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.23.38.245:58276
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 93.147.181.90:54949
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 93.170.95.22:40194
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 202.58.96.74:60687
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 62.213.57.218:46563
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.44.26.170:49133
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 73.100.254.78:39723
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.32.181.250:35276
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.53.111.67:56213
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 61.220.28.67:8080
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.172.211.4:38143
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 203.189.148.2:38905
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 190.200.16.193:8080
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.17.244.82:45145
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 105.247.169.10:40899
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 117.220.171.109:50577
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.9.134.113:65301
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.69.47.253:50218
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 202.166.205.246:38368
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 223.16.202.105:8888
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 183.220.43.89:8080
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 125.26.109.81:34020
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 115.46.98.119:8123
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 219.238.186.188:8118
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 193.34.140.149:46800
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 202.158.6.115:43951
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.132.173.18:41258
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.75.27.94:3128
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 181.15.172.203:54567
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.212.226.172:808
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.221.190.124:48472
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 220.132.220.69:39297
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 181.15.172.204:54567
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 85.133.189.197:8080
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 190.207.136.69:8080
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.255.235.246:54364
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 125.26.12.2:58424
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.58.251.178:54680
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 166.130.163.233:40936
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 94.42.112.250:33643
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 114.33.2.68:44322
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 181.10.135.222:23500
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.103.111:31845
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 202.57.62.162:37612
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 2.81.229.208:49265
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.94.125.244:41508
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 157.119.118.122:38153
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 89.120.79.126:48291
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 158.58.133.69:49048
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 122.160.72.92:48228
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.106.148.200:30591
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 140.207.155.94:39354
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 217.182.10.106:8080
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.106.148.203:60227
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 24.223.97.71:35826
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 187.95.11.6:55571
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 168.232.205.34:32672
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 202.29.106.32:38668
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 106.104.12.180:80
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 43.242.37.220:41072
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 5.153.68.6:8888
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 119.254.94.123:34817
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 183.129.207.82:11123
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 183.129.244.17:21231
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 85.193.255.229:51704
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 213.153.167.119:46876
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.69.45.124:49607
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.67.236.199:43388
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 212.192.202.207:4550
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 218.66.79.175:52077
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 62.173.155.206:41258
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 185.225.150.28:46798
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 131.161.55.146:52279
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 139.5.71.38:23500
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.98.60:39932
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.194.88.45:45027
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 190.149.7.211:38082
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 158.58.133.88:37292
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 138.186.22.131:53281
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.10.189.97:50644
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: http://61.220.28.67:8080 "GET http://www.hualongxiang.com/ HTTP/1.1" 403 1372
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.212.93.193:40711
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 62.122.97.66:59143
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 139.255.16.171:31773
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.134:61738
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 220.135.160.154:32516
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 218.26.227.108:80
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.9.188.143:61552
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 119.28.212.29:8888
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.218:51807
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.47.66.2:39804
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.9.188.217:41256
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 110.189.152.86:39701
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 62.210.149.33:10534
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.20.100.242:47248
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 147.92.87.181:44561
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 101.76.209.69:1080
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.23.38.253:58276
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 41.72.204.66:42258
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 220.133.218.213:37884
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: http://101.76.209.69:1080 "GET http://www.hualongxiang.com/ HTTP/1.1" 503 None
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: http://219.238.186.188:8118 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: http://119.28.212.29:8888 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: http://103.9.188.217:41256 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:02 [urllib3.connectionpool] DEBUG: http://103.9.188.143:61552 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:03 [urllib3.connectionpool] DEBUG: http://1.20.103.111:31845 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:03 [urllib3.connectionpool] DEBUG: http://125.26.109.81:34020 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:03 [urllib3.connectionpool] DEBUG: http://114.33.2.68:44322 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:03 [urllib3.connectionpool] DEBUG: http://1.20.100.218:51807 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:03 [urllib3.connectionpool] DEBUG: http://1.10.189.97:50644 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:03 [urllib3.connectionpool] DEBUG: http://1.20.100.242:47248 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:03 [urllib3.connectionpool] DEBUG: http://1.20.98.60:39932 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:03 [urllib3.connectionpool] DEBUG: http://122.160.72.92:48228 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:03 [urllib3.connectionpool] DEBUG: http://118.172.211.4:38143 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://85.193.255.229:51704 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://185.44.26.170:49133 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://62.210.149.33:10534 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://185.132.173.18:41258 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://1.20.100.134:61738 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://106.104.12.180:80 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://103.58.251.178:54680 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://94.42.112.250:33643 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://62.173.155.206:41258 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://183.220.43.89:8080 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://103.212.93.193:40711 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://181.15.172.204:54567 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:04 [urllib3.connectionpool] DEBUG: http://158.58.133.69:49048 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:05 [urllib3.connectionpool] DEBUG: http://202.166.205.246:38368 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:05 [urllib3.connectionpool] DEBUG: http://125.26.12.2:58424 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:05 [urllib3.connectionpool] DEBUG: http://43.242.37.220:41072 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:05 [urllib3.connectionpool] DEBUG: http://213.153.167.119:46876 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:06 [urllib3.connectionpool] DEBUG: http://103.194.88.45:45027 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:07 [urllib3.connectionpool] DEBUG: http://110.189.152.86:39701 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2018-11-15 11:23:07 [root] INFO: ####################################['http://223.203.0.14:8000', 'http://218.60.8.83:3129', 'http://119.28.230.147:8888', 'http://140.227.33.30:3128', 'http://1.20.97.45:35662', 'http://1.20.99.143:49834', 'http://118.175.176.136:55156', 'http://1.20.102.70:39339', 'http://1.20.100.133:61029', 'http://1.20.96.203:52770', 'http://118.174.220.199:35468', 'http://180.180.156.87:36628', 'http://118.174.220.110:39025', 'http://1.20.100.143:40751', 'http://1.2.169.44:47315', 'http://1.20.100.199:54004', 'http://1.20.101.76:44464', 'http://182.52.74.73:36286', 'http://124.41.211.170:50586', 'http://176.106.12.65:30120', 'http://60.216.101.46:32868', 'http://124.41.211.213:31029', 'http://118.174.220.152:45206', 'http://62.148.151.253:53570', 'http://182.52.51.13:42268', 'http://186.125.59.8:57486', 'http://124.41.213.3:35821', 'http://95.165.172.90:60496', 'http://118.175.93.132:50140', 'http://103.88.221.105:31205', 'http://1.20.100.230:41654', 'http://87.240.58.30:34037', 'http://125.26.7.120:57040', 'http://176.103.45.27:46994', 'http://219.238.186.188:8118', 'http://119.28.212.29:8888', 'http://103.9.188.217:41256', 'http://103.9.188.143:61552', 'http://1.20.103.111:31845', 'http://114.33.2.68:44322', 'http://1.20.100.218:51807', 'http://1.10.189.97:50644', 'http://125.26.109.81:34020', 'http://62.210.149.33:10534', 'http://122.160.72.92:48228', 'http://1.20.100.242:47248', 'http://1.20.98.60:39932', 'http://183.220.43.89:8080', 'http://85.193.255.229:51704', 'http://185.132.173.18:41258', 'http://62.173.155.206:41258', 'http://94.42.112.250:33643', 'http://106.104.12.180:80', 'http://1.20.100.134:61738', 'http://103.58.251.178:54680', 'http://103.212.93.193:40711', 'http://181.15.172.204:54567', 'http://202.166.205.246:38368', 'http://125.26.12.2:58424', 'http://158.58.133.69:49048', 'http://213.153.167.119:46876', 'http://43.242.37.220:41072', 'http://103.194.88.45:45027', 'http://110.189.152.86:39701']
+2018-11-15 11:23:07 [root] INFO: ####################################http://125.26.109.81:34020
+2018-11-15 11:23:07 [root] INFO: +++++++++++++++++++++++++++++++++++++++++正在用http://125.26.109.81:34020的代理去请求，https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search
+2018-11-15 11:23:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search> (referer: None)
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102211.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102576.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102128.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102151.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102071.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102331.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102305.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102708.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102335.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102122.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102036.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102077.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102023.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102587.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102306.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102015.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102150.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102121.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102711.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102329.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102578.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102076.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102085.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102002.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102130.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102102.gif> referred in <None>
+2018-11-15 11:23:18 [scrapy.pipelines.files] DEBUG: File (uptodate): Downloaded image from <GET https://cbg-xyq.res.netease.com/images/big/102086.gif> referred in <None>
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=3&eid=201808091000113-3-WC2GZ5EJY7OB4B&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=212&eid=201811081200113-212-3AXGEQFSHXQR&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=657&eid=201810231800113-657-G8473TPDYEQZ&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=459&eid=201810071700113-459-ACFSN5QZTKCK&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=212&eid=201811092100113-212-MN6OJ9PBAN9A&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=459&eid=201809292200113-459-0WJ1C4NWDMAV&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=583&eid=201809141800113-583-COW4GCH38OOH&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=9&eid=201810251500113-9-H0OIM8DG3NETJ4&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=583&eid=201809131700113-583-PJLLX6ZRCUUI&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=199&eid=201811121400113-199-MCWDIADGR1RP&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=723&eid=201811121900113-723-EOGKMXUPVHPF&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=352&eid=201810231400113-352-YO2IRV29L7AR&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=215&eid=201810302200113-215-W21WE8RUNLWA&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=138&eid=201810262000113-138-1GMLO8DUQEVQ&o&equip_refer=1
+2018-11-15 11:23:18 [cbg163] INFO: https://xyq.cbg.163.com/equip?s=414&eid=201811091300113-414-IJ7U44REPATP&o&equip_refer=1
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102211.gif', 'path': 'full/83d529ef4829b8685b2ab00b4b83226988406ab2.jpg', 'checksum': '8fc3a8e285dccc9c774e2d4e06901d2c'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102576.gif', 'path': 'full/a6f11fc60e81e7e24a5ddd3a8e1a401496cea647.jpg', 'checksum': '72a0a69c680ff29d48c0a2da74b6c110'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102128.gif', 'path': 'full/d8b610d2dc1bb27de0a720ea65e30bc8b587830d.jpg', 'checksum': '8d30225ac8efc2ac4dbb9466523c4420'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102071.gif', 'path': 'full/58f3789c6234636b92aae40ba735fbe254075044.jpg', 'checksum': '1c88730fbd3ede31d16de2f3355e825b'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102331.gif', 'path': 'full/42ae612bf95e08c259b50082bfc64232e40bd170.jpg', 'checksum': '35e39e0850e325e0858603cb8e7dc4d4'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102331.gif', 'path': 'full/42ae612bf95e08c259b50082bfc64232e40bd170.jpg', 'checksum': '35e39e0850e325e0858603cb8e7dc4d4'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102305.gif', 'path': 'full/dd2c224dfedc69a1fcb01f9f732997f134f50624.jpg', 'checksum': '1cc17fc87c362eb4bea197e59501f7df'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102576.gif', 'path': 'full/a6f11fc60e81e7e24a5ddd3a8e1a401496cea647.jpg', 'checksum': '72a0a69c680ff29d48c0a2da74b6c110'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102708.gif', 'path': 'full/d41163482e2857a680c6a5a8a1ecc86fe77ef596.jpg', 'checksum': '820f754f589978a30e170adbde82404a'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102211.gif', 'path': 'full/83d529ef4829b8685b2ab00b4b83226988406ab2.jpg', 'checksum': '8fc3a8e285dccc9c774e2d4e06901d2c'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102211.gif', 'path': 'full/83d529ef4829b8685b2ab00b4b83226988406ab2.jpg', 'checksum': '8fc3a8e285dccc9c774e2d4e06901d2c'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102335.gif', 'path': 'full/9bc0bdeb1e0b0632f2389b040b504b03f9c02576.jpg', 'checksum': 'cc9b970ad45908764a0cc05625d6cf00'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102331.gif', 'path': 'full/42ae612bf95e08c259b50082bfc64232e40bd170.jpg', 'checksum': '35e39e0850e325e0858603cb8e7dc4d4'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102122.gif', 'path': 'full/f41b740225528770c6fbae8cf38d8b53bfce61f4.jpg', 'checksum': '62949f56e3b4a4bafb1fcf60d39cd874'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102036.gif', 'path': 'full/95e847db10ad49a012d2e7ad8fa4b2b2de4f676a.jpg', 'checksum': '495d56ddc6e34dc2c710c51b33bbdd91'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102071.gif', 'path': 'full/58f3789c6234636b92aae40ba735fbe254075044.jpg', 'checksum': '1c88730fbd3ede31d16de2f3355e825b'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102077.gif', 'path': 'full/8a70433e0cf27f39ee9590a614897c8d49b5dfcf.jpg', 'checksum': 'b6027665d01041f6ebd37a06a01d81f9'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102023.gif', 'path': 'full/f7e5610e925088d447acf58b23981085b4036b21.jpg', 'checksum': '86e096e940cc215483aeee7df919f1a4'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102128.gif', 'path': 'full/d8b610d2dc1bb27de0a720ea65e30bc8b587830d.jpg', 'checksum': '8d30225ac8efc2ac4dbb9466523c4420'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102151.gif', 'path': 'full/a75622177d4243ec57d06642d6b9746da1495da7.jpg', 'checksum': 'af203bdce07d17ebc484c7467aed04da'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102576.gif', 'path': 'full/a6f11fc60e81e7e24a5ddd3a8e1a401496cea647.jpg', 'checksum': '72a0a69c680ff29d48c0a2da74b6c110'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102587.gif', 'path': 'full/857ecb503dd5432efbb98989fcf8561e163fa612.jpg', 'checksum': 'f97584daae2bf07e265ad641b7418efd'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102306.gif', 'path': 'full/4be5841d1faaa2c5e3a7c1f83986a12f477a869f.jpg', 'checksum': '47b1230bf9b02014e9edd6e0cacbd5ac'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102015.gif', 'path': 'full/1e242fac0aebaa1269776e29afaa8fbe21acd80b.jpg', 'checksum': '272d49e9ba9906fa4c0e89523a49fda8'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102150.gif', 'path': 'full/26fef31a518fbf5c25b719286bc27c00050f6c7d.jpg', 'checksum': 'ab1e285808fd7db07ba098e4a4a18ac1'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102077.gif', 'path': 'full/8a70433e0cf27f39ee9590a614897c8d49b5dfcf.jpg', 'checksum': 'b6027665d01041f6ebd37a06a01d81f9'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102121.gif', 'path': 'full/199c8fb0581a5f30631bd4974fe19cca1df5bc9f.jpg', 'checksum': 'ccc396d338b6b05a1f6fd9dc6e326d43'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102331.gif', 'path': 'full/42ae612bf95e08c259b50082bfc64232e40bd170.jpg', 'checksum': '35e39e0850e325e0858603cb8e7dc4d4'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102711.gif', 'path': 'full/64f544db982bec717b0a957bd60ab8a90b4f3425.jpg', 'checksum': '40474d7627cb2d6c2ecae4457daec5d1'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102329.gif', 'path': 'full/bd7223332767c07cfac40f02042a600ed9eb9800.jpg', 'checksum': '9afdf589e60ec45f1a0e95196451870b'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102578.gif', 'path': 'full/9ab3905cea69e468c779e4f8ac364208126b29a3.jpg', 'checksum': '4924a5442c0e85a2b9c476240dd75ab7'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102071.gif', 'path': 'full/58f3789c6234636b92aae40ba735fbe254075044.jpg', 'checksum': '1c88730fbd3ede31d16de2f3355e825b'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102076.gif', 'path': 'full/f179a022c904becf43bd8b6e95eef812dea0d054.jpg', 'checksum': '91a4756f294c2a390c1fe1dc0a36b4b9'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102077.gif', 'path': 'full/8a70433e0cf27f39ee9590a614897c8d49b5dfcf.jpg', 'checksum': 'b6027665d01041f6ebd37a06a01d81f9'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102076.gif', 'path': 'full/f179a022c904becf43bd8b6e95eef812dea0d054.jpg', 'checksum': '91a4756f294c2a390c1fe1dc0a36b4b9'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102085.gif', 'path': 'full/4db65fe8d89005e8baf149c1661b5a60cf6384a6.jpg', 'checksum': 'f69dba645eaa0d43072056b3899a1ed6'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102085.gif', 'path': 'full/4db65fe8d89005e8baf149c1661b5a60cf6384a6.jpg', 'checksum': 'f69dba645eaa0d43072056b3899a1ed6'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102002.gif', 'path': 'full/e7e42c647abcf211b03fd69a656020e85cbde6d1.jpg', 'checksum': 'eca5d155e1f106e0dbc8867edeaa5e10'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102711.gif', 'path': 'full/64f544db982bec717b0a957bd60ab8a90b4f3425.jpg', 'checksum': '40474d7627cb2d6c2ecae4457daec5d1'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102211.gif', 'path': 'full/83d529ef4829b8685b2ab00b4b83226988406ab2.jpg', 'checksum': '8fc3a8e285dccc9c774e2d4e06901d2c'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102077.gif', 'path': 'full/8a70433e0cf27f39ee9590a614897c8d49b5dfcf.jpg', 'checksum': 'b6027665d01041f6ebd37a06a01d81f9'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102130.gif', 'path': 'full/5b853fc3593b633af467758bc2a8a791138355ef.jpg', 'checksum': '112f29d06b8538cf429e95c7533f6195'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102102.gif', 'path': 'full/f045d3226c364ce9934ddef73f6140e97a8c0722.jpg', 'checksum': '70bb231f60dc834c512571152cb0e279'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102086.gif', 'path': 'full/1aee6a08871f6458b6879a837f8109db81b1ed73.jpg', 'checksum': '93283503d1f989d3e210de87aaa29d71'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102071.gif', 'path': 'full/58f3789c6234636b92aae40ba735fbe254075044.jpg', 'checksum': '1c88730fbd3ede31d16de2f3355e825b'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102578.gif', 'path': 'full/9ab3905cea69e468c779e4f8ac364208126b29a3.jpg', 'checksum': '4924a5442c0e85a2b9c476240dd75ab7'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [root] INFO: [(True, {'url': 'https://cbg-xyq.res.netease.com/images/big/102086.gif', 'path': 'full/1aee6a08871f6458b6879a837f8109db81b1ed73.jpg', 'checksum': '93283503d1f989d3e210de87aaa29d71'})]
+2018-11-15 11:23:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&page=1&count=15&search_type=overall_search_role&view_loc=overall_search>
+None
+2018-11-15 11:23:18 [scrapy.core.engine] INFO: Closing spider (finished)
+2018-11-15 11:23:18 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 639,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 93485,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'file_count': 27,
+ 'file_status_count/uptodate': 27,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 11, 15, 3, 23, 18, 313900),
+ 'item_scraped_count': 54,
+ 'log_count/DEBUG': 313,
+ 'log_count/INFO': 83,
+ 'memusage/max': 55562240,
+ 'memusage/startup': 55562240,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2018, 11, 15, 3, 22, 55, 832804)}
+2018-11-15 11:23:18 [scrapy.core.engine] INFO: Spider closed (finished)
