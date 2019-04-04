@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="75dc8e4b-c6f8-4ecc-ba48-8af69e1972c1" name="Default" comment="" />
+    <list default="true" id="75dc8e4b-c6f8-4ecc-ba48-8af69e1972c1" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/mhcbg/spiders/cbg163.py" beforeDir="false" afterPath="$PROJECT_DIR$/mhcbg/spiders/cbg163.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,8 +16,11 @@
       <file leaf-file-name="cbg163.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mhcbg/spiders/cbg163.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+            <state relative-caret-position="772">
+              <caret line="515" column="41" selection-start-line="515" selection-start-column="41" selection-end-line="515" selection-end-column="41" />
+              <folding>
+                <element signature="e#24#47#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -504,8 +509,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mhcbg/spiders/cbg163.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+        <state relative-caret-position="772">
+          <caret line="515" column="41" selection-start-line="515" selection-start-column="41" selection-end-line="515" selection-end-column="41" />
+          <folding>
+            <element signature="e#24#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
