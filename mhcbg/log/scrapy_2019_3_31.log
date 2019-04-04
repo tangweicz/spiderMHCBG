@@ -1,0 +1,158 @@
+2019-03-31 21:51:06 [scrapy.utils.log] INFO: Scrapy 1.5.1 started (bot: mhcbg)
+2019-03-31 21:51:06 [scrapy.utils.log] INFO: Versions: lxml 4.2.3.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.5.0, w3lib 1.19.0, Twisted 18.9.0, Python 3.6.6rc1 (v3.6.6rc1:1015e38be4, Jun 12 2018, 01:14:33) - [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Darwin-17.7.0-x86_64-i386-64bit
+2019-03-31 21:51:16 [scrapy.utils.log] INFO: Scrapy 1.5.1 started (bot: mhcbg)
+2019-03-31 21:51:16 [scrapy.utils.log] INFO: Versions: lxml 4.2.3.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.5.0, w3lib 1.19.0, Twisted 18.9.0, Python 3.6.6rc1 (v3.6.6rc1:1015e38be4, Jun 12 2018, 01:14:33) - [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Darwin-17.7.0-x86_64-i386-64bit
+2019-03-31 21:51:27 [scrapy.utils.log] INFO: Scrapy 1.5.1 started (bot: mhcbg)
+2019-03-31 21:51:27 [scrapy.utils.log] INFO: Versions: lxml 4.2.3.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.5.0, w3lib 1.19.0, Twisted 18.9.0, Python 3.6.6rc1 (v3.6.6rc1:1015e38be4, Jun 12 2018, 01:14:33) - [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Darwin-17.7.0-x86_64-i386-64bit
+2019-03-31 21:51:27 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'mhcbg', 'CONCURRENT_REQUESTS': 100, 'LOG_FILE': 'log/scrapy_2019_3_31.log', 'NEWSPIDER_MODULE': 'mhcbg.spiders', 'SPIDER_MODULES': ['mhcbg.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
+2019-03-31 21:51:27 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-31 21:51:27 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'mhcbg.middlewares.cbgDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats',
+ 'mhcbg.middlewares.allProcessExceptionMiddleware']
+2019-03-31 21:51:27 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-31 21:51:27 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2019-03-31 21:51:27 [scrapy.core.engine] INFO: Spider opened
+2019-03-31 21:51:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-31 21:51:27 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2019-03-31 21:51:27 [root] INFO: ---------------------------------https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&count=30&search_type=overall_search_role&view_loc=overall_search&page=1
+2019-03-31 21:51:27 [root] INFO: -----------------------------------数据库中取到的代理地址列表：[<mhcbg.models.proxyIpModel.proxyIpModel object at 0x109ecff60>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109ecffd0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109ecfd30>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109ecff28>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109ecfd68>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109ecfda0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109ecfdd8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda048>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda0f0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda0b8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda160>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda128>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda080>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda198>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda1d0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda240>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda278>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda2b0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda2e8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda320>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda358>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda390>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda3c8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda400>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda438>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda470>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda4a8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda4e0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda518>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda550>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda588>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda5c0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda5f8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda630>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda668>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda6a0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda6d8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda710>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda748>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda780>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda7b8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda7f0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda828>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda860>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda898>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda8d0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda908>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda940>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda978>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda9b0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fda9e8>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fdaa20>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fdaa58>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x109fdaa90>]
+2019-03-31 21:51:27 [root] INFO: **********************数据库内不为空，开始去挨个验证每一个是否可用
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 223.203.0.14:8000
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.251.87.56:868
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 221.214.180.122:50696
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 218.60.8.83:3129
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.150.35.145:8080
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 222.223.115.30:45974
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 124.193.135.242:49263
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 116.192.171.51:41940
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 58.240.224.252:32189
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 124.243.226.18:8888
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 119.82.253.182:33528
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 162.105.87.211:8118
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 193.112.15.70:8118
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 222.184.7.206:47808
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 58.26.10.67:8080
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 110.189.152.86:34975
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 119.82.249.4:59728
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 119.82.251.250:43086
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 221.120.162.209:60107
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 43.245.34.205:48450
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 221.120.163.251:34138
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.9.188.236:53301
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 221.120.162.215:58498
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.9.188.230:51159
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.9.188.216:47406
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 222.217.68.51:42432
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.242.15.86:50250
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 60.216.101.46:32868
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 218.48.229.173:808
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.10.187.139:50780
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.175.93.40:55036
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.233.17:59417
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 159.192.125.145:41751
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 183.131.154.143:10379
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 125.25.54.65:45226
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.10.187.137:42718
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.232.95:47195
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.10.187.234:33206
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.9.188.217:37586
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.175.93.44:40770
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 27.96.84.17:60270
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 103.41.8.26:36149
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: http://182.150.35.145:8080 "GET http://www.hualongxiang.com/ HTTP/1.1" 403 229
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 134.236.244.75:39385
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.2.169.93:31852
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 114.141.55.90:38812
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.220.32:36920
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 118.174.220.58:53969
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.179.173.5:46978
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.52.238.118:45616
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.53.206.198:49959
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 123.231.244.142:56076
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.10.187.72:39678
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 1.179.180.17:30986
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): xxxxx:80
+2019-03-31 21:51:27 [urllib3.connectionpool] DEBUG: http://218.60.8.83:3129 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2019-03-31 21:51:30 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): tpv.daxiangdaili.com:80
+2019-03-31 21:51:30 [urllib3.connectionpool] DEBUG: http://tpv.daxiangdaili.com:80 "GET /ip/?tid=555093498677388&num=100&delay=5&category=2&protocol=https&filter=on HTTP/1.1" 200 91
+2019-03-31 21:51:30 [root] INFO: 从代理上拿到的IP地址：
+2019-03-31 21:51:30 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): error|订单已经过期 - 续费请到 http:80
+2019-03-31 21:52:00 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): tpv.daxiangdaili.com:80
+2019-03-31 21:52:00 [urllib3.connectionpool] DEBUG: http://tpv.daxiangdaili.com:80 "GET /ip/?tid=555093498677388&num=100&delay=5&category=2&protocol=https&filter=on HTTP/1.1" 200 91
+2019-03-31 21:52:00 [root] INFO: 从代理上拿到的IP地址：
+2019-03-31 21:52:00 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): error|订单已经过期 - 续费请到 http:80
+2019-03-31 21:52:30 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): tpv.daxiangdaili.com:80
+2019-03-31 21:52:30 [urllib3.connectionpool] DEBUG: http://tpv.daxiangdaili.com:80 "GET /ip/?tid=555093498677388&num=100&delay=5&category=2&protocol=https&filter=on HTTP/1.1" 200 91
+2019-03-31 21:52:30 [root] INFO: 从代理上拿到的IP地址：
+2019-03-31 21:52:30 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): error|订单已经过期 - 续费请到 http:80
+2019-03-31 21:53:00 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): tpv.daxiangdaili.com:80
+2019-03-31 21:53:01 [urllib3.connectionpool] DEBUG: http://tpv.daxiangdaili.com:80 "GET /ip/?tid=555093498677388&num=100&delay=5&category=2&protocol=https&filter=on HTTP/1.1" 200 91
+2019-03-31 21:53:01 [root] INFO: 从代理上拿到的IP地址：
+2019-03-31 21:53:01 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): error|订单已经过期 - 续费请到 http:80
+2019-03-31 21:53:06 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-03-31 21:53:07 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-03-31 22:48:28 [scrapy.utils.log] INFO: Scrapy 1.5.1 started (bot: mhcbg)
+2019-03-31 22:48:28 [scrapy.utils.log] INFO: Versions: lxml 4.2.3.0, libxml2 2.9.8, cssselect 1.0.3, parsel 1.5.0, w3lib 1.19.0, Twisted 18.9.0, Python 3.6.6rc1 (v3.6.6rc1:1015e38be4, Jun 12 2018, 01:14:33) - [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0h  27 Mar 2018), cryptography 2.2.2, Platform Darwin-17.7.0-x86_64-i386-64bit
+2019-03-31 22:48:28 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'mhcbg', 'CONCURRENT_REQUESTS': 100, 'LOG_FILE': 'log/scrapy_2019_3_31.log', 'NEWSPIDER_MODULE': 'mhcbg.spiders', 'SPIDER_MODULES': ['mhcbg.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
+2019-03-31 22:48:28 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-03-31 22:48:28 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'mhcbg.middlewares.cbgDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats',
+ 'mhcbg.middlewares.allProcessExceptionMiddleware']
+2019-03-31 22:48:28 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-03-31 22:48:28 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2019-03-31 22:48:28 [scrapy.core.engine] INFO: Spider opened
+2019-03-31 22:48:28 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-03-31 22:48:28 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2019-03-31 22:48:28 [root] INFO: ---------------------------------https://recommd.xyq.cbg.163.com/cgi-bin/recommend.py?callback=Request.JSONP.request_map.request_0&_=1539830579182&level_min=109&level_max=109&expt_gongji=17&expt_fangyu=17&expt_fashu=17&expt_kangfa=17&bb_expt_gongji=17&bb_expt_fangyu=17&bb_expt_fashu=17&bb_expt_kangfa=17&act=recommd_by_role&count=30&search_type=overall_search_role&view_loc=overall_search&page=1
+2019-03-31 22:48:28 [root] INFO: -----------------------------------数据库中取到的代理地址列表：[<mhcbg.models.proxyIpModel.proxyIpModel object at 0x105e98be0>, <mhcbg.models.proxyIpModel.proxyIpModel object at 0x105e98ef0>]
+2019-03-31 22:48:28 [root] INFO: **********************数据库内不为空，开始去挨个验证每一个是否可用
+2019-03-31 22:48:28 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 218.60.8.83:3129
+2019-03-31 22:48:28 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 182.150.35.145:8080
+2019-03-31 22:48:28 [urllib3.connectionpool] DEBUG: http://182.150.35.145:8080 "GET http://www.hualongxiang.com/ HTTP/1.1" 403 229
+2019-03-31 22:48:28 [urllib3.connectionpool] DEBUG: http://218.60.8.83:3129 "GET http://www.hualongxiang.com/ HTTP/1.1" 200 None
+2019-03-31 22:48:28 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): tpv.daxiangdaili.com:80
+2019-03-31 22:48:28 [urllib3.connectionpool] DEBUG: http://tpv.daxiangdaili.com:80 "GET /ip/?tid=555093498677388&num=100&delay=5&category=2&protocol=https&filter=on HTTP/1.1" 200 91
+2019-03-31 22:48:28 [root] INFO: 从代理上拿到的IP地址：
+2019-03-31 22:48:28 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): error|订单已经过期 - 续费请到 http:80
