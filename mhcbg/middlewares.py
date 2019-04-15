@@ -124,9 +124,6 @@ class cbgDownloaderMiddleware(object):
     logger = logging.getLogger()
 
     def process_request(self, request, spider):
-
-
-
         self.logger.info("---------------------------------"+request.url)
 
         if len(self.canUsedProxyIps) < 50:#可用代理目前不足50个
