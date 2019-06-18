@@ -524,7 +524,7 @@ class Cbg163Spider(scrapy.Spider):
     """
     def newDecode(string):
         a, b = string.strip('@').split('@')
-        b, p, idx = eval(base64.b64decode(b)), '', 0
+        b, p, idx = base64.b64decode(b).decode("unicode_escape").strip("\""), '', 0
         for i in b:
             q = ord(a[idx % len(a)])
             idx += 1
