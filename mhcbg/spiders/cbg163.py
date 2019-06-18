@@ -3,7 +3,7 @@ import scrapy, json, re
 from .. import codeToZhaohuanshou
 from mhcbg.items import mhCbgAccountItem
 from scrapy.mail import MailSender
-import threading, requests, random, queue, time
+import threading, requests, random, queue, time,base64
 from mhcbg.models.proxyIpModel import proxyIpModel
 class Cbg163Spider(scrapy.Spider):
     name = 'cbg163'
@@ -47,6 +47,7 @@ class Cbg163Spider(scrapy.Spider):
                 accountItem["summonNum"] = 0
                 accountInfo = everyAccount.get("desc", False)  # 拿到一个账号的神器、坐骑、锦衣、法宝、装备、修炼等信息
                 if accountInfo:
+                    accountInfo = self.newDecode(accountInfo)
                     accountInfoDict = self.changeStrToDict(accountInfo)  # 将拿到的字符串数据结果，转换为dict的数据格式
                     shenqi = accountInfoDict.get("shenqi", False)  # 拿到账户的神器信息
                     if shenqi: # 如果有神器信息，那么需要确定属性，然后算价格
@@ -60,6 +61,7 @@ class Cbg163Spider(scrapy.Spider):
                         accountItem["xiangruiPrice"] = 0
                     anotherInfo = everyAccount.get("other_info", False)  # 强壮、神速的属性在other_info中，拿到other_info内容
                     if anotherInfo:
+                        anotherInfo = self.newDecode(anotherInfo)
                         anotherInfo = self.changeStrToDict(anotherInfo)
                         accountItem["qiangzhuangshensuPrice"] = self.calculateQiangzhuangAndShensu(anotherInfo)
                     else:
@@ -515,5 +517,18 @@ class Cbg163Spider(scrapy.Spider):
             shensu = allSkills.get("237", 0)
             if shensu == 36: price += 500
         return price
+
+
+    """
+        解密网易最近对账号关键信息的方法
+    """
+    def newDecode(string):
+        a, b = string.strip('@').split('@')
+        b, p, idx = eval(base64.b64decode(b)), '', 0
+        for i in b:
+            q = ord(a[idx % len(a)])
+            idx += 1
+            p += chr(ord(i) ^ q)
+        return p
 
 
