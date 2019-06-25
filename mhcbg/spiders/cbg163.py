@@ -522,7 +522,7 @@ class Cbg163Spider(scrapy.Spider):
     """
         解密网易最近对账号关键信息的方法
     """
-    def newDecode(string):
+    def newDecode(self, string):
         a, b = string.strip('@').split('@')
         b, p, idx = base64.b64decode(b).decode("unicode_escape").strip("\""), '', 0
         for i in b:
