@@ -71,7 +71,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   # 'mhcbg.pipelines.mhcbgImgDownloadPipeline': 300,
+   'mhcbg.pipelines.mhcbgImgDownloadPipeline': 300,
 
     # 'scrapy.pipelines.images.ImagesPipeline': 300,
 
@@ -110,7 +110,6 @@ LOG_FILE = log_file_path
 IMAGES_STORE = 'staticFiles/images/'
 
 IMAGES_THUMBS = {
-    'small': (50, 50),
     'big': (270, 270),
 }
 

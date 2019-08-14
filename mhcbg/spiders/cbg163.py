@@ -5,6 +5,7 @@ from mhcbg.items import mhCbgAccountItem
 from scrapy.mail import MailSender
 import threading, requests, random, queue, time,base64
 from mhcbg.models.proxyIpModel import proxyIpModel
+from mhcbg.items import mhCbgImageItem
 class Cbg163Spider(scrapy.Spider):
     name = 'cbg163'
     allowed_domains = ['xyq.cbg.163.com']
@@ -256,7 +257,13 @@ class Cbg163Spider(scrapy.Spider):
                 zhaohuanshouSkillCodes = "" #存放召唤兽技能代号的字符串
                 zhaohuanshouType = item.get("iType", False)  # 拿到召唤兽类型信息
                 if zhaohuanshouType:  # 如果有类型信息
+
                     zhaohuanshouCode = zhaohuanshouType
+                    imgUrl = "https://cbg-xyq.res.netease.com/images/big/" + str(zhaohuanshouCode) + ".gif"#下载所有的召唤兽图片到本地
+                    imgItem = mhCbgImageItem()
+                    imgItem["image_urls"] = [imgUrl]
+                    yield imgItem
+
                     zhaohuanshouName = codeToZhaohuanshou.codeToZhaohuanshou.get(str(zhaohuanshouType), "系统内无法识别的召唤兽")  # 从我们的数据中，拿到何种召唤兽
                 zhaohuanshouSkills = item.get("all_skills", False)  # 拿到召唤兽技能信息
                 if zhaohuanshouSkills:  # 如果有召唤兽技能字段，开始处理
